@@ -2,7 +2,7 @@
   "name": "@abilovelchin/react-ts-starter-kit",
   "version": "1.0.1",
   "type": "module",
-  "bin": "./bin/cli.js",
+  "bin": "./bin/cli.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
