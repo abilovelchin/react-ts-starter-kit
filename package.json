@@ -1,8 +1,8 @@
 {
-  "name": "react-ts-starter-kit",
-  "private": true,
+  "name": "@abilovelchin/react-ts-starter-kit",
   "version": "1.0.0",
   "type": "module",
+  "bin": "./bin/cli.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
