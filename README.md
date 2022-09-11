@@ -6,7 +6,7 @@
 <a href="https://discord.gg/2nKEnKq">
 	<img src="https://img.shields.io/github/forks/abilovelchin/react-ts-starter-kit" height="20">
 </a>
-<a href="https://github.com/kriasoft/react-starter-kit/stargazers">
+<a href="https://github.com/abilovelchin/react-ts-starter-kit/stargazers">
 	<img src="https://img.shields.io/github/stars/abilovelchin/react-ts-starter-kit?style=social" height="20">
 </a>
 
@@ -16,6 +16,7 @@ The best front-end starter kit for building web applications with [React](https:
 
 - Perfect folder structure
 - @redux/toolkit configuration
+- RTK Query
 - Vite JS: Next generation frontend tooling
 - Vite module resolver: It also allows you to setup a custom alias for directories, specific files
 - React router configuration
