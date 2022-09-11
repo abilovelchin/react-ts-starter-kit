@@ -1,6 +1,6 @@
 # React TS Starter Kit (@abilovelchin)
 
-<a href="https://github.com/abilovelchin/react-ts-starter-kit">
+<a href="https://github.com/abilovelchin/react-ts-starter-kit?sponsor=1">
 	<img src="https://img.shields.io/badge/-GitHub-%23555.svg?logo=github-sponsors" height="20">
 </a>
 <a href="https://discord.gg/2nKEnKq">
