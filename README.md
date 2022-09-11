@@ -10,7 +10,7 @@
 	<img src="https://img.shields.io/github/stars/abilovelchin/react-ts-starter-kit?style=social" height="20">
 </a>
 
-The best front-end starter kit for building web applications with [React](https://reactjs.org/) [TypeScript](https://www.typescriptlang.org/).
+The best front-end starter kit for building web applications with [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/).
 
 ## Features
 
@@ -24,36 +24,35 @@ The best front-end starter kit for building web applications with [React](https:
 
 ## Directory Structure
 
-`├──`[`public`](./public)<br>
-`├──`[`src`](./src)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`assets`](./src/assets)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`components`](./src/components)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`constants`](./src/constants)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`pages`](./src/pages)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`router`](./src/router)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`services`](./src/services)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`store`](./src/store)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`types`](./src/types)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`utils`](./src/utils)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`App.tsx`](./src/App.tsx)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`main.tsx`](./src/main.tsx)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`vite-env.d.ts`](./src/vite-env.d.ts)<br>
-`├──`[`.env`](./.env)<br>
-`├──`[`.gitignore`](./.gitignore)<br>
-`├──`[`index.html`](./index.html)<br>
-`├──`[`package.json`](./package.json)<br>
-`├──`[`postcss.config.cjs`](./postcss.config.cjs)<br>
-`├──`[`README.md`](./README.md)<br>
-`├──`[`tailwind.config.cjs`](./tailwind.config.cjs)<br>
-`└──`[`tsconfig.json`](./tsconfig.json)<br>
-`├──`[`tsconfig.node.json`](./tsconfig.node.json)<br>
-`├──`[`vite.config.ts`](./vite.config.ts)<br>
+`├──`[`src`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`assets`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/assets)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`components`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/components)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`constants`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/constants)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`pages`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/pages)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`router`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/router)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`services`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/services)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`store`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/store)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`types`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/types)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`utils`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/utils)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`App.tsx`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/App.tsx)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`main.tsx`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/main.tsx)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`vite-env.d.ts`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/vite-env.d.ts)<br>
+`├──`[`.env`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/.env)<br>
+`├──`[`.gitignore`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/.gitignore)<br>
+`├──`[`index.html`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/index.html)<br>
+`├──`[`package.json`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/package.json)<br>
+`├──`[`postcss.config.cjs`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/postcss.config.cjs)<br>
+`├──`[`README.md`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/README.md)<br>
+`├──`[`tailwind.config.cjs`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/tailwind.config.cjs)<br>
+`└──`[`tsconfig.json`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/tsconfig.json)<br>
+`├──`[`tsconfig.node.json`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/tsconfig.node.json)<br>
+`├──`[`vite.config.ts`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/vite.config.ts)<br>
 
 ## Getting Started
 
 [Generate](https://github.com/abilovelchin/react-ts-starter-kit/generate) a new project
 from this template, clone it, install project dependencies, update the
-environment variables found in [`env/*.env`](./env/), and start hacking.
+environment variables found in [`.env`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/env), and start hacking.
 
 `npx` method
 
