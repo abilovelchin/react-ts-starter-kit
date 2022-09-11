@@ -3,7 +3,7 @@
 <a href="https://github.com/abilovelchin/react-ts-starter-kit?sponsor=1">
 	<img src="https://img.shields.io/badge/-GitHub-%23555.svg?logo=github-sponsors" height="20">
 </a>
-<a href="https://discord.gg/2nKEnKq">
+<a href="https://github.com/abilovelchin/react-ts-starter-kit">
 	<img src="https://img.shields.io/github/forks/abilovelchin/react-ts-starter-kit" height="20">
 </a>
 <a href="https://github.com/abilovelchin/react-ts-starter-kit/stargazers">
