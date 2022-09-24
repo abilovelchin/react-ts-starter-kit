@@ -1,12 +1,9 @@
-import { useGetUserQuery } from "$services/user.service";
-import { User } from "$types/user.type";
 import React from "react";
+import { useGetUserQuery } from "$services/user.service";
 import { Link } from "react-router-dom";
 
 const Users = () => {
   const { data, isLoading, isSuccess, isError } = useGetUserQuery();
-
-  console.log(data);
 
   const renderUserList = () => {
     return data?.map((item, i) => (
