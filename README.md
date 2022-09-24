@@ -30,12 +30,11 @@ The best front-end starter kit for building web applications with [React](https:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`components`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/components)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`constants`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/constants)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`pages`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/pages)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`router`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/router)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`routes`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/routes)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`services`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/services)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`store`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/store)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`types`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/types)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`utils`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/utils)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`App.tsx`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/App.tsx)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`main.tsx`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/main.tsx)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`├──`[`vite-env.d.ts`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/src/vite-env.d.ts)<br>
 `├──`[`.env`](https://github.com/abilovelchin/react-ts-starter-kit/tree/master/.env)<br>
