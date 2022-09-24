@@ -6,6 +6,10 @@ const Users = () => {
   const { data, isLoading, isSuccess, isError } = useGetUserQuery();
 
   const renderUserList = () => {
+    if (isLoading) {
+      return <li className="text-sm animate-bounce">Loading...</li>;
+    }
+
     return data?.map((item, i) => (
       <li key={i} className="flex items-center gap-5">
         <span>{item.name}</span>
