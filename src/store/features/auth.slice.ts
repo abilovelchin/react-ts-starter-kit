@@ -4,7 +4,7 @@ import { User } from "$types/user.type";
 
 // Define the initial state using that type
 const initialState = {
-  user: {} as User,
+  user: {} as Partial<User>,
 };
 
 export const authSlice = createSlice({

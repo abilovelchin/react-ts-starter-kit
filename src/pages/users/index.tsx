@@ -3,11 +3,17 @@ import { useGetUserQuery } from "$services/user.service";
 import { Link } from "react-router-dom";
 
 const Users = () => {
-  const { data, isLoading, isSuccess, isError } = useGetUserQuery();
+  const { data, isLoading, isError } = useGetUserQuery();
 
   const renderUserList = () => {
     if (isLoading) {
       return <li className="text-sm animate-bounce">Loading...</li>;
+    }
+
+    if (isError) {
+      return (
+        <li className="text-sm text-red-500">Please check your network...</li>
+      );
     }
 
     return data?.map((item, i) => (
@@ -28,3 +34,5 @@ const Users = () => {
 };
 
 export default Users;
+
+export const role = "USER";

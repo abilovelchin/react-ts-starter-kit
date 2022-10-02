@@ -7,3 +7,4 @@ const UserItem = () => {
 };
 
 export default UserItem;
+export const role = "USER";
