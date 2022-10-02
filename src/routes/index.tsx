@@ -37,23 +37,25 @@ export const Routes = () => {
   return (
     <App>
       <Switch>
-        {routes.map(({ path, component: Component = Fragment, role = "" }) => {
-          if (role == "")
+        {routes.map(
+          ({ path, component: Component = Fragment, role = "GUEST" }) => {
+            if (role == "GUEST")
+              return <Route key={path} path={path} element={<Component />} />;
+
+            const userRole = user.role?.toLocaleLowerCase();
+            const roles: any = Array.isArray(role)
+              ? role.map((val) => val.toLocaleLowerCase())
+              : role.toLocaleLowerCase();
+
+            if (Array.isArray(roles) && !roles.includes(userRole))
+              return <Route key={path} path={path} element={<Forbidden />} />;
+
+            if (!Array.isArray(roles) && userRole !== roles)
+              return <Route key={path} path={path} element={<Forbidden />} />;
+
             return <Route key={path} path={path} element={<Component />} />;
-
-          const userRole = user.role?.toLocaleLowerCase();
-          const roles: any = Array.isArray(role)
-            ? role.map((val) => val.toLocaleLowerCase())
-            : role.toLocaleLowerCase();
-
-          if (Array.isArray(roles) && !roles.includes(userRole))
-            return <Route key={path} path={path} element={<Forbidden />} />;
-
-          if (!Array.isArray(roles) && userRole !== roles)
-            return <Route key={path} path={path} element={<Forbidden />} />;
-
-          return <Route key={path} path={path} element={<Component />} />;
-        })}
+          }
+        )}
         <Route path="*" element={<NotFound />} />
       </Switch>
     </App>

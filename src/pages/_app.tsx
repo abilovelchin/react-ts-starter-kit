@@ -1,4 +1,6 @@
 import Navigation from "$components/navigation";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {
   children: JSX.Element;
@@ -6,12 +8,18 @@ type Props = {
 
 const App = ({ children: component }: Props) => {
   return (
-    <div className="h-full container mx-auto">
+    <div className="flex flex-col h-full">
       {/* Navigation */}
       <Navigation />
 
       {/* Component */}
       {component}
+
+      <ToastContainer
+        autoClose={1500}
+        position="bottom-center"
+        className="text-sm"
+      />
     </div>
   );
 };

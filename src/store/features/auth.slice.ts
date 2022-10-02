@@ -12,12 +12,12 @@ export const authSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<User>) => {
+    login: (state, action: PayloadAction<Partial<User>>) => {
       state.user = action.payload;
     },
 
     logout: (state) => {
-      state.user = {} as User;
+      state.user = {} as Partial<User>;
     },
   },
 });
