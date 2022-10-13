@@ -3,6 +3,8 @@ import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { Routes as Switch, Route } from "react-router-dom";
 
+const excludeFolders = ["components"];
+
 const PRESERVED: any = import.meta.glob("/src/pages/(_app|404|403).tsx", {
   eager: true,
 });
@@ -15,17 +17,19 @@ const preserved: any = Object.keys(PRESERVED).reduce((preserved, file) => {
   return { ...preserved, [key]: PRESERVED[file].default };
 }, {});
 
-const routes = Object.keys(ROUTES).map((route) => {
-  const path = route
-    .replace(/\/src\/pages|index|\.tsx$/g, "")
-    .replace(/\/$/, "")
-    .replace(/\[\.{3}.+\]/, "*")
-    .replace(/\[(.+)\]/, ":$1");
+const routes = Object.keys(ROUTES)
+  .filter((f) => excludeFolders.findIndex((fi: string) => f.includes(fi)) < 0)
+  .map((route) => {
+    const path = route
+      .replace(/\/src\/pages|index|\.tsx$/g, "")
+      .replace(/\/$/, "")
+      .replace(/\[\.{3}.+\]/, "*")
+      .replace(/\[(.+)\]/, ":$1");
 
-  const role = ROUTES[route].role;
+    const role = ROUTES[route].role;
 
-  return { path, component: ROUTES[route].default, role };
-});
+    return { path, component: ROUTES[route].default, role };
+  });
 
 export const Routes = () => {
   const App = preserved?.["_app"] || Fragment;
