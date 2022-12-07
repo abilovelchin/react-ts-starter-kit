@@ -16,6 +16,7 @@ export default defineConfig({
       $store: path.resolve("src/store"),
       $types: path.resolve("src/types"),
       $utils: path.resolve("src/utils"),
+      $uikit: path.resolve("src/ui-kit"),
     },
   },
 });
