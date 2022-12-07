@@ -1,6 +1,6 @@
-import React from "react";
 import { useGetUserQuery } from "$services/user.service";
 import { Link } from "react-router-dom";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
 const Users = () => {
   const { data, isLoading, isError } = useGetUserQuery();
@@ -17,9 +17,10 @@ const Users = () => {
     }
 
     return data?.map((item, i) => (
-      <li key={i} className="flex items-center gap-5">
-        <span>{item.name}</span>
+      <li key={i} className="flex items-center gap-x-5">
+        <span className="w-40 truncate">{item.name}</span>
         <Link to={`/users/${item.id}`} className="text-blue-500 text-sm">
+          <EyeIcon className="w-4 h-4" />
           Show
         </Link>
       </li>
