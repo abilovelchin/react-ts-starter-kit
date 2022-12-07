@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="flex flex-col h-full items-center justify-center">
+    <div className="flex flex-col h-full items-center justify-center text-sm bg-gray-100">
       <h6 className="font-medium">React TS Starter Kit</h6>
       <span className="font-medium text-gray-400">
         by{" "}
