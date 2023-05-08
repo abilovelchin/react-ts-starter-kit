@@ -1,9 +1,9 @@
 import { login } from "$store/features/auth.slice";
-import { AppDispatch } from "$store/index";
+import { AppDispatch, RootState } from "$store/index";
 import { User } from "$types/user.type";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -15,7 +15,12 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (user) navigate("/");
+  }, []);
 
   const onSubmit = handleSubmit(async (values) => {
     // send login request here...

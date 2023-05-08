@@ -37,6 +37,12 @@ dependencies:
   reactjs-popup:
     specifier: ^2.0.5
     version: 2.0.5(react-dom@18.2.0)(react@18.2.0)
+  redux-persist:
+    specifier: ^6.0.0
+    version: 6.0.0(react@18.2.0)(redux@4.2.1)
+  redux-persist-transform-encrypt:
+    specifier: ^5.0.0
+    version: 5.0.0(redux-persist@6.0.0)(redux@4.2.1)
   uuid:
     specifier: ^9.0.0
     version: 9.0.0
@@ -973,6 +979,10 @@ packages:
       which: 2.0.2
     dev: true
 
+  /crypto-js@4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
+
   /css-tree@2.3.1:
     resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
@@ -1437,6 +1447,10 @@ packages:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
     dev: false
 
+  /json-stringify-safe@5.0.1:
+    resolution: {integrity: sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==}
+    dev: false
+
   /json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
@@ -1830,6 +1844,31 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /redux-persist-transform-encrypt@5.0.0(redux-persist@6.0.0)(redux@4.2.1):
+    resolution: {integrity: sha512-etgQwkGPOPM1vLyPrp6XjcjXvRbpTBQN9IY7oLqd5dFwme1VYDkf2CyFPCxszRuSBh36uwQOLAukcFULVyRnkw==}
+    peerDependencies:
+      redux: '>3.0.0'
+      redux-persist: ^6.x.x
+    dependencies:
+      crypto-js: 4.1.1
+      json-stringify-safe: 5.0.1
+      redux: 4.2.1
+      redux-persist: 6.0.0(react@18.2.0)(redux@4.2.1)
+    dev: false
+
+  /redux-persist@6.0.0(react@18.2.0)(redux@4.2.1):
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      redux: 4.2.1
+    dev: false
 
   /redux-thunk@2.4.2(redux@4.2.1):
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}

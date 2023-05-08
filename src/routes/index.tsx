@@ -46,7 +46,7 @@ export const Routes = () => {
             if (role == "GUEST")
               return <Route key={path} path={path} element={<Component />} />;
 
-            const userRole = user.role?.toLocaleLowerCase();
+            const userRole = user?.role?.toLocaleLowerCase();
             const roles: any = Array.isArray(role)
               ? role.map((val) => val.toLocaleLowerCase())
               : role.toLocaleLowerCase();

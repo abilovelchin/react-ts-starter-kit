@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "$types/user.type";
 
 // Define the initial state using that type
-const initialState = {
-  user: {} as Partial<User>,
+const initialState: { user: Partial<User> | null } = {
+  user: null,
 };
 
 export const authSlice = createSlice({
@@ -17,7 +17,7 @@ export const authSlice = createSlice({
     },
 
     logout: (state) => {
-      state.user = {} as Partial<User>;
+      state.user = null;
     },
   },
 });
