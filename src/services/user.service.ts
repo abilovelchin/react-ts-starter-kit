@@ -9,7 +9,7 @@ export const userApi = createApi({
   baseQuery,
   endpoints: (builder) => ({
     getUser: builder.query<User[], void>({
-      query: () => `users`,
+      query: () => `/users`,
     }),
   }),
 });

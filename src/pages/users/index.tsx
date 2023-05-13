@@ -3,17 +3,15 @@ import { Link } from "react-router-dom";
 import { EyeIcon } from "@heroicons/react/24/solid";
 
 const Users = () => {
-  const { data, isLoading, isError } = useGetUserQuery();
+  const { data = [], isLoading, isError, error } = useGetUserQuery();
 
   const renderUserList = () => {
     if (isLoading) {
       return <li className="text-sm animate-bounce">Loading...</li>;
     }
 
-    if (isError) {
-      return (
-        <li className="text-sm text-red-500">Please check your network...</li>
-      );
+    if (data?.length == 0) {
+      return <li className="text-sm text-gray-500">Data not found...</li>;
     }
 
     return data?.map((item, i) => (

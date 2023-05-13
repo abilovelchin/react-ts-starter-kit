@@ -5,6 +5,7 @@ import authSlice from "./features/auth.slice";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
+import { authMiddleware } from "./middlewares/error.middleware";
 
 const encryptor = encryptTransform({
   secretKey: import.meta.env.VITE_PERSIST_KEY,
@@ -31,7 +32,9 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }).concat(userApi.middleware),
+    })
+      .concat(userApi.middleware)
+      .prepend(authMiddleware),
 });
 
 export const persistor = persistStore(store);
