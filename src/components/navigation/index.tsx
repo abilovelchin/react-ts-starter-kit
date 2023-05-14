@@ -9,10 +9,12 @@ import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "$store/index";
 import { logout } from "$store/features/auth.slice";
+import { useModals } from "$src/router";
 
 const Navigation = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch<AppDispatch>();
+  const modals = useModals();
 
   const handleLogout = () => {
     dispatch(logout());
@@ -43,6 +45,9 @@ const Navigation = () => {
           </button>
         </li>
       )}
+      <li>
+        <button onClick={() => modals.open("/modals/test")}>Open modal</button>
+      </li>
     </ul>
   );
 };

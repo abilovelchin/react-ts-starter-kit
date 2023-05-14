@@ -1,25 +1,24 @@
 import Navigation from "$components/navigation";
+import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Modals } from "@generouted/react-router";
 import "react-toastify/dist/ReactToastify.css";
 
-type Props = {
-  children: JSX.Element;
-};
-
-const App = ({ children: component }: Props) => {
+const App = () => {
   return (
     <div className="flex flex-col h-full">
       {/* Navigation */}
       <Navigation />
 
       {/* Component */}
-      {component}
+      <Outlet />
 
       <ToastContainer
         autoClose={1500}
         position="bottom-center"
         className="text-sm"
       />
+      <Modals />
     </div>
   );
 };

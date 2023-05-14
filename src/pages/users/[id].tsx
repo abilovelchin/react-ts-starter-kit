@@ -1,8 +1,9 @@
+import { useParams } from "$src/router";
 import React from "react";
-import { useParams } from "react-router-dom";
 
 const UserItem = () => {
-  const { id } = useParams();
+  const { id } = useParams("/users/:id");
+
   return <div className="p-5">User ID: {id}</div>;
 };
 
