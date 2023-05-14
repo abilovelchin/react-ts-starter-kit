@@ -11,7 +11,7 @@ import {
 export default defineConfig({
   theme: {
     colors: {
-      primary: "green",
+      primary: "#368fc7",
     },
   },
   presets: [

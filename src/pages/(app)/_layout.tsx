@@ -1,12 +1,12 @@
-import React from "react";
+import Navigation from "@/components/navigation";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <div className="flex-1">
-      <h1>Layout</h1>
+      {/* Navigation */}
+      <Navigation />
 
-      {/* Outlet */}
       <Outlet />
     </div>
   );

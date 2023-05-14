@@ -1,13 +1,12 @@
 import { isRejectedWithValue } from "@reduxjs/toolkit";
 import type { MiddlewareAPI, Middleware } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import store from "$store/index";
-import { logout } from "$store/features/auth.slice";
+import { logout } from "@/store/features/auth.slice";
 
 /**
  * Log a warning and show a toast!
  */
-export const authMiddleware: Middleware =
+export const ErrorMiddleware: Middleware =
   (api: MiddlewareAPI) => (next) => (action: any) => {
     // RTK Query uses `createAsyncThunk` from redux-toolkit under the hood, so we're able to utilize these matchers!
     if (isRejectedWithValue(action)) {
@@ -20,10 +19,12 @@ export const authMiddleware: Middleware =
             }`
       );
 
-      if (action?.payload.status == 401) {
-        store.dispatch(logout());
+      // 401: Unauthorized control
+      if (action.payload.status == 401) {
+        api.dispatch(logout());
         window.location.replace("/login");
       }
     }
+
     return next(action);
   };

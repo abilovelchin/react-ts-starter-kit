@@ -9,16 +9,7 @@ export default defineConfig({
   plugins: [react(), UnoCSS(), generouted()],
   resolve: {
     alias: {
-      $src: path.resolve("src"),
-      $assets: path.resolve("src/assets"),
-      $components: path.resolve("src/components"),
-      $constants: path.resolve("src/constants"),
-      $pages: path.resolve("src/pages"),
-      $router: path.resolve("src/router"),
-      $services: path.resolve("src/services"),
-      $store: path.resolve("src/store"),
-      $types: path.resolve("src/types"),
-      $utils: path.resolve("src/utils"),
+      "@": path.resolve("src"),
     },
   },
 });

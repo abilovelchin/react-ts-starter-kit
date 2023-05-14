@@ -1,11 +1,11 @@
-import { userApi } from "$services/user.service";
+import { userApi } from "@/services/user.service";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import appSlice from "./features/app.slice";
 import authSlice from "./features/auth.slice";
 import storage from "redux-persist/lib/storage";
 import { persistStore, persistReducer } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
-import { authMiddleware } from "./middlewares/error.middleware";
+import { ErrorMiddleware } from "@/store/middlewares/error.middleware";
 
 const encryptor = encryptTransform({
   secretKey: import.meta.env.VITE_PERSIST_KEY,
@@ -34,7 +34,7 @@ const store = configureStore({
       serializableCheck: false,
     })
       .concat(userApi.middleware)
-      .prepend(authMiddleware),
+      .prepend(ErrorMiddleware),
 });
 
 export const persistor = persistStore(store);

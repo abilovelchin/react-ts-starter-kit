@@ -14,7 +14,7 @@ export type Params = {
   '/users/:id': { id: string }
 }
 
-export type ModalPath = `/modals/test`
+export type ModalPath = `/modals/example`
 
 export const { Link, Navigate } = components<Path, Params>()
 export const { useModals, useNavigate, useParams } = hooks<Path, Params, ModalPath>()

@@ -3,13 +3,14 @@ import { NavLink } from "react-router-dom";
 import {
   ArrowRightOnRectangleIcon,
   HomeIcon,
+  LightBulbIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "$store/index";
-import { logout } from "$store/features/auth.slice";
-import { useModals } from "$src/router";
+import { AppDispatch, RootState } from "@/store/index";
+import { logout } from "@/store/features/auth.slice";
+import { useModals } from "@/router";
 
 const Navigation = () => {
   const { user } = useSelector((state: RootState) => state.auth);
@@ -27,13 +28,8 @@ const Navigation = () => {
           <HomeIcon className="w-4 h-4" /> Home page
         </NavLink>
       </li>
-      <li>
-        <NavLink to={`${user ? "/account" : "/login"}`}>
-          <UserCircleIcon className="w-4 h-4" />
-          {user ? "My account" : "Login"}
-        </NavLink>
-      </li>
-      {user && (
+
+      {user ? (
         <li>
           <button
             type="button"
@@ -44,9 +40,21 @@ const Navigation = () => {
             Logout
           </button>
         </li>
+      ) : (
+        <li>
+          <NavLink to="/login">
+            <UserCircleIcon className="w-4 h-4" />
+            Login
+          </NavLink>
+        </li>
       )}
       <li>
-        <button onClick={() => modals.open("/modals/test")}>Open modal</button>
+        <button
+          onClick={() => modals.open("/modals/example")}
+          className="flex items-center gap-x-1 ml-3"
+        >
+          <LightBulbIcon className="w-4 h-4" /> Modal
+        </button>
       </li>
     </ul>
   );

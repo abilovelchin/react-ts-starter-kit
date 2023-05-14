@@ -1,15 +1,11 @@
-import Navigation from "$components/navigation";
+import { Modals } from "@generouted/react-router";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Modals } from "@generouted/react-router";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
     <div className="flex flex-col h-full">
-      {/* Navigation */}
-      <Navigation />
-
       {/* Component */}
       <Outlet />
 

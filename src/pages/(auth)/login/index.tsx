@@ -1,6 +1,6 @@
-import { login } from "$store/features/auth.slice";
-import { AppDispatch, RootState } from "$store/index";
-import { User } from "$types/user.type";
+import { login } from "@/store/features/auth.slice";
+import { AppDispatch, RootState } from "@/store/index";
+import { User } from "@/types/user.type";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,7 +24,10 @@ const Login = () => {
 
   const onSubmit = handleSubmit(async (values) => {
     // send login request here...
-    if (values.username != "user" || values.password != "12345") {
+    if (
+      !["user", "admin"].includes(values.username) ||
+      values.password != "12345"
+    ) {
       toast.info("Username or Password is incorrect");
       return;
     }
@@ -34,7 +37,7 @@ const Login = () => {
       username: values.username,
       email: "abilovelchin@gmail.com",
       website: "https://abilov.az",
-      role: "USER",
+      role: values.username.toUpperCase(),
     };
 
     dispatch(login(user));
@@ -43,7 +46,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col items-center justify-center flex-1">
-      <div className="gap-5 w-[400px] shadow-md p-10 rounded-lg">
+      <div className="gap-5 w-[400px] shadow-md p-10 rounded-lg bg-white">
         <h6 className="text-center text-lg font-medium text-gray-500 mb-5">
           LOGIN TO YOUR ACCOUNT
         </h6>
