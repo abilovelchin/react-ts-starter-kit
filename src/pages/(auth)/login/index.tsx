@@ -38,6 +38,7 @@ const Login = () => {
       email: "abilovelchin@gmail.com",
       website: "https://abilov.az",
       role: values.username.toUpperCase(),
+      token: "Lorem ipsum, dolor sit",
     };
 
     dispatch(login(user));
