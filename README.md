@@ -70,3 +70,6 @@ $ cd ./example
 $ yarn install
 $ yarn start
 ```
+
+## Contributors
+Firuzcan Hajiyev
