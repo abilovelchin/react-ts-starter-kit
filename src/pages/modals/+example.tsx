@@ -1,7 +1,8 @@
-import { useModals } from "@/router";
+import { useModals } from '@/router';
 
-export default function TestModal() {
+const TestModal: React.FC = () => {
   const modals = useModals();
+
   return (
     <div className="bg-black/30 fixed top-0 left-0 w-full h-full flex items-center justify-center">
       <div className="bg-white p-5 rounded-lg shadow-lg">
@@ -19,4 +20,5 @@ export default function TestModal() {
       </div>
     </div>
   );
-}
+};
+export default TestModal;

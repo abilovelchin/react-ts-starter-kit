@@ -1,14 +1,15 @@
-import Navigation from "@/components/navigation";
-import { Outlet } from "react-router-dom";
+import { Fragment } from 'react';
+import { Outlet } from 'react-router-dom';
 
-const Layout = () => {
+import Navigation from '@/widgets/navigation';
+
+const Layout: React.FC = () => {
   return (
-    <div className="flex-1">
-      {/* Navigation */}
+    <Fragment>
       <Navigation />
 
       <Outlet />
-    </div>
+    </Fragment>
   );
 };
 

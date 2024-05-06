@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import type { RootState } from "$store/index";
-import { User } from "@/types/user.type";
+import { User } from '@/types/user.type';
 
 // Define the initial state using that type
 const initialState: { user: Partial<User> | null } = {
@@ -8,7 +8,7 @@ const initialState: { user: Partial<User> | null } = {
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
