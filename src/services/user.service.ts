@@ -1,11 +1,11 @@
 // Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { User } from "@/types/user.type";
-import { baseQuery } from "@/utils/fetchBaseQuery";
+import type { User } from '@/types/user.type';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { baseQuery } from '@/utils/fetchBaseQuery';
 
 // Define a service using a base URL and expected endpoints
 export const userApi = createApi({
-  reducerPath: "userApi",
+  reducerPath: 'userApi',
   baseQuery,
   endpoints: (builder) => ({
     getUser: builder.query<User[], void>({

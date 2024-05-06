@@ -1,12 +1,14 @@
-import { useGetUserQuery } from "@/services/user.service";
-import { Link } from "react-router-dom";
-import { EyeIcon, TrashIcon } from "@heroicons/react/24/solid";
-import { usePermissions } from "@/rbac";
+import { Link } from 'react-router-dom';
+import { EyeIcon, TrashIcon } from '@heroicons/react/24/solid';
+import { Button } from '@/components';
 
-const Users = () => {
+import { usePermissions } from '@/hooks';
+import { useGetUserQuery } from '@/services/user.service';
+
+const UsersPage: React.FC = () => {
   const { hasPermission } = usePermissions();
 
-  const { data = [], isLoading, isError, error } = useGetUserQuery();
+  const { data = [], isLoading } = useGetUserQuery();
 
   const renderUserList = () => {
     if (isLoading) {
@@ -20,28 +22,30 @@ const Users = () => {
     return data?.map((item, i) => (
       <li key={i} className="flex items-center gap-x-3">
         <span className="w-40 truncate">{item.name}</span>
-        <Link to={`/users/${item.id}`} className="text-blue-500 text-sm">
-          <EyeIcon className="w-4 h-4" />
-          Show
-        </Link>
-        {hasPermission("user.delete") && (
-          <button
-            type="button"
-            className="text-blue-500 text-sm flex items-center gap-x-1"
-          >
-            <TrashIcon className="w-4 h-4" />
-            Delete
-          </button>
-        )}
+
+        <div className="flex items-center gap-x-2">
+          <Link to={`/users/${item.id}`} className="p-0">
+            <Button variant="outline" size="sm">
+              <EyeIcon className="w-4 h-4" />
+              Show
+            </Button>
+          </Link>
+          {hasPermission('user.delete') && (
+            <Button variant="destructive" size="sm">
+              <TrashIcon className="w-4 h-4" />
+              Delete
+            </Button>
+          )}
+        </div>
       </li>
     ));
   };
 
   return (
     <div className="p-5">
-      <ul>{renderUserList()}</ul>
+      <ul className="flex flex-col gap-y-4">{renderUserList()}</ul>
     </div>
   );
 };
 
-export default Users;
+export default UsersPage;

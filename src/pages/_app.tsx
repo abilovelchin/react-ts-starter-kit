@@ -1,21 +1,16 @@
-import { Modals } from "@generouted/react-router";
-import { Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Fragment } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Toaster } from '@/components';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <div className="flex flex-col h-full">
-      {/* Component */}
+    <Fragment>
+      {/* Route Outlet/Content */}
       <Outlet />
 
-      <ToastContainer
-        autoClose={1500}
-        position="bottom-center"
-        className="text-sm"
-      />
-      <Modals />
-    </div>
+      {/* Modules */}
+      <Toaster />
+    </Fragment>
   );
 };
 

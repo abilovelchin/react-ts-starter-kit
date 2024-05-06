@@ -1,13 +1,19 @@
-import { login } from "@/store/features/auth.slice";
-import { AppDispatch, RootState } from "@/store/index";
-import { User } from "@/types/user.type";
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import type { AppDispatch, RootState } from '@/store/index';
+import type { User } from '@/types/user.type';
 
-const Login = () => {
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { useToast } from '@/hooks/useToast';
+import { Button, Input } from '@/components';
+
+import { login } from '@/store/features/auth.slice';
+
+const LoginPage: React.FC = () => {
+  const { toast } = useToast();
+
   const { register, handleSubmit } = useForm<{
     username: string;
     password: string;
@@ -19,30 +25,27 @@ const Login = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    if (user) navigate("/");
+    if (user) navigate('/');
   }, []);
 
   const onSubmit = handleSubmit(async (values) => {
     // send login request here...
-    if (
-      !["user", "admin"].includes(values.username) ||
-      values.password != "12345"
-    ) {
-      toast.info("Username or Password is incorrect");
+    if (!['user', 'admin'].includes(values.username) || values.password != '12345') {
+      toast({ title: 'Error', description: 'Username or Password is incorrect' });
       return;
     }
     const user: Partial<User> = {
       id: 1,
-      name: "Elchin",
+      name: 'Elchin',
       username: values.username,
-      email: "abilovelchin@gmail.com",
-      website: "https://abilov.az",
+      email: 'abilovelchin@gmail.com',
+      website: 'https://abilov.az',
       role: values.username.toUpperCase(),
-      token: "Lorem ipsum, dolor sit",
+      token: 'Lorem ipsum, dolor sit',
     };
 
     dispatch(login(user));
-    navigate("/");
+    navigate('/');
   });
 
   return (
@@ -63,28 +66,20 @@ const Login = () => {
           {/* username */}
           <div className="flex flex-col gap-1">
             <label className="text-gray-600 text-sm">Username</label>
-            <input
-              type="text"
-              className="p-2 bg-gray-100 rounded"
-              {...register("username")}
-            />
+            <Input type="text" {...register('username')} />
           </div>
 
           {/* password */}
           <div className="flex flex-col gap-1">
             <label className="text-gray-600 text-sm">Password</label>
-            <input
-              type="password"
-              className="p-2 bg-gray-100 rounded"
-              {...register("password")}
-            />
+            <Input type="password" {...register('password')} />
           </div>
 
           {/* button */}
           <div className="flex flex-col gap-1">
-            <button className="py-2 px-5 rounded bg-indigo-500 text-white">
+            <Button type="submit" size="lg">
               Sign In
-            </button>
+            </Button>
           </div>
         </form>
       </div>
@@ -92,4 +87,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
