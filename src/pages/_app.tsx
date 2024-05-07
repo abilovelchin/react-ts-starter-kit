@@ -1,16 +1,16 @@
-import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Redirects } from './__redirects';
 import { Toaster } from '@/components';
 
 const App: React.FC = () => {
   return (
-    <Fragment>
+    <Redirects>
       {/* Route Outlet/Content */}
       <Outlet />
 
       {/* Modules */}
       <Toaster />
-    </Fragment>
+    </Redirects>
   );
 };
 

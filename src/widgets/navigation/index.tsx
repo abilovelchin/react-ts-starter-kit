@@ -5,18 +5,18 @@ import { useModals } from '@/router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  ArrowRightEndOnRectangleIcon,
+  ArrowRightIcon,
   HomeIcon,
-  LightBulbIcon,
-  UserCircleIcon,
-} from '@heroicons/react/24/solid';
+  LightningBoltIcon,
+  PersonIcon,
+} from '@radix-ui/react-icons';
 
 import { logout } from '@/store/features/auth.slice';
 
 import './style.css';
 
 const Navigation: React.FC = () => {
-  const { user } = useSelector((state: RootState) => state.auth);
+  const auth = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch<AppDispatch>();
   const modals = useModals();
 
@@ -32,21 +32,21 @@ const Navigation: React.FC = () => {
         </NavLink>
       </li>
 
-      {user ? (
+      {auth?.user ? (
         <li>
           <button
             type="button"
             className="flex items-center gap-x-2"
             onClick={handleLogout}
           >
-            <ArrowRightEndOnRectangleIcon className="w-4 h-4" />
+            <ArrowRightIcon className="w-4 h-4" />
             Logout
           </button>
         </li>
       ) : (
         <li>
           <NavLink to="/login">
-            <UserCircleIcon className="w-4 h-4" />
+            <PersonIcon className="w-4 h-4" />
             Login
           </NavLink>
         </li>
@@ -56,7 +56,7 @@ const Navigation: React.FC = () => {
           onClick={() => modals.open('/modals/example')}
           className="flex items-center gap-x-1 ml-3"
         >
-          <LightBulbIcon className="w-4 h-4" /> Modal
+          <LightningBoltIcon className="w-4 h-4" /> Modal
         </button>
       </li>
     </ul>
