@@ -1,6 +1,6 @@
 {
   "name": "@abilovelchin/react-ts-starter-kit",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "type": "module",
   "bin": "./bin/cli.js",
   "keywords": [
