@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { EyeIcon, TrashIcon } from '@heroicons/react/24/solid';
+import { EyeOpenIcon, TrashIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components';
 
 import { usePermissions } from '@/hooks';
@@ -26,7 +26,7 @@ const UsersPage: React.FC = () => {
         <div className="flex items-center gap-x-2">
           <Link to={`/users/${item.id}`} className="p-0">
             <Button variant="outline" size="sm">
-              <EyeIcon className="w-4 h-4" />
+              <EyeOpenIcon className="w-4 h-4" />
               Show
             </Button>
           </Link>

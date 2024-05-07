@@ -1,10 +1,9 @@
-import type { AppDispatch, RootState } from '@/store/index';
+import type { AppDispatch } from '@/store/index';
 import type { User } from '@/types/user.type';
 
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { useToast } from '@/hooks/useToast';
 import { Button, Input } from '@/components';
@@ -21,12 +20,7 @@ const LoginPage: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const { user } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    if (user) navigate('/');
-  }, []);
 
   const onSubmit = handleSubmit(async (values) => {
     // send login request here...
