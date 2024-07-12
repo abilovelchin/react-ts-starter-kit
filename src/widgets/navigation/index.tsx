@@ -4,16 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { useModals } from '@/router';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  ArrowRightIcon,
-  HomeIcon,
-  LightningBoltIcon,
-  PersonIcon,
-} from '@radix-ui/react-icons';
-
 import { logout } from '@/store/features/auth.slice';
 
 import './style.css';
+import { ArrowRightIcon, HomeIcon, LightbulbIcon, UserIcon } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const auth = useSelector((state: RootState) => state.auth);
@@ -46,7 +40,7 @@ const Navigation: React.FC = () => {
       ) : (
         <li>
           <NavLink to="/login">
-            <PersonIcon className="w-4 h-4" />
+            <UserIcon size="16" />
             Login
           </NavLink>
         </li>
@@ -56,7 +50,7 @@ const Navigation: React.FC = () => {
           onClick={() => modals.open('/modals/example')}
           className="flex items-center gap-x-1 ml-3"
         >
-          <LightningBoltIcon className="w-4 h-4" /> Modal
+          <LightbulbIcon size="16" /> Modal
         </button>
       </li>
     </ul>
