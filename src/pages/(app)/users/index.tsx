@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { EyeOpenIcon, TrashIcon } from '@radix-ui/react-icons';
 import { Button } from '@/components';
 
 import { usePermissions } from '@/hooks';
 import { useGetUserQuery } from '@/services/user.service';
+import { EyeIcon, TrashIcon } from 'lucide-react';
 
 const UsersPage: React.FC = () => {
   const { hasPermission } = usePermissions();
@@ -26,7 +26,7 @@ const UsersPage: React.FC = () => {
         <div className="flex items-center gap-x-2">
           <Link to={`/users/${item.id}`} className="p-0">
             <Button variant="outline" size="sm">
-              <EyeOpenIcon className="w-4 h-4" />
+              <EyeIcon className="w-4 h-4" />
               Show
             </Button>
           </Link>

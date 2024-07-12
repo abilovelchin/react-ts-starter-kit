@@ -5,7 +5,7 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from '@/components/Toast/Toast';
+} from '@/components/toast';
 import { useToast } from '@/hooks/useToast';
 
 const Toaster: React.FC = () => {
