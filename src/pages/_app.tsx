@@ -4,7 +4,7 @@ import { Toaster } from '@/components';
 
 const App: React.FC = () => {
   return (
-    <Redirects>
+    <Redirects hasAsanLogin>
       {/* Route Outlet/Content */}
       <Outlet />
 

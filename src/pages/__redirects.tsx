@@ -1,12 +1,26 @@
 import type { Path } from '@/router';
 
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAppSelector } from '@/store';
+import AsanLogin from './(auth)/asan-login';
 
 const AUTH: Path[] = ['/login'];
 
-export const Redirects: React.FC<React.PropsWithChildren> = ({ children }) => {
+type Props = {
+  hasAsanLogin: boolean;
+};
+
+export const Redirects: React.FC<React.PropsWithChildren & Props> = ({
+  children,
+  hasAsanLogin,
+}) => {
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+
+  // Check is asan login
+  if (hasAsanLogin && searchParams.get('code') && searchParams.get('state')) {
+    return <AsanLogin />;
+  }
 
   const auth = useAppSelector((state) => state.auth);
   const isLoggedIn = !!auth?.user?.id;
