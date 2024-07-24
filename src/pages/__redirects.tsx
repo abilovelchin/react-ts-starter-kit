@@ -16,13 +16,13 @@ export const Redirects: React.FC<React.PropsWithChildren & Props> = ({
 }) => {
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const auth = useAppSelector((state) => state.auth);
 
   // Check is asan login
   if (hasAsanLogin && searchParams.get('code') && searchParams.get('state')) {
     return <AsanLogin />;
   }
 
-  const auth = useAppSelector((state) => state.auth);
   const isLoggedIn = !!auth?.user?.id;
 
   const authenticatedOnPublicPath =
