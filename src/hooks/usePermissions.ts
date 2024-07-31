@@ -4,10 +4,10 @@ import { PermissionName, permissions } from '../constants/permissions';
 
 export default function usePermissions() {
   const auth = useSelector((state: RootState) => state.auth);
-  const user = auth?.user;
+  const user = auth?.data?.user;
 
   const hasPermission = (permissionName: PermissionName) => {
-    return user?.role ? permissions[permissionName].includes(user.role) : false;
+    return user?.role ? permissions[permissionName].includes(user.role.key) : false;
   };
 
   return { hasPermission };

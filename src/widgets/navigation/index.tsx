@@ -26,7 +26,7 @@ const Navigation: React.FC = () => {
         </NavLink>
       </li>
 
-      {auth?.user ? (
+      {auth?.data?.user ? (
         <li>
           <button
             type="button"

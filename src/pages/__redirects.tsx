@@ -23,7 +23,7 @@ export const Redirects: React.FC<React.PropsWithChildren & Props> = ({
     return <AsanLogin />;
   }
 
-  const isLoggedIn = !!auth?.user?.id;
+  const isLoggedIn = !!auth?.data?.user?.id;
 
   const authenticatedOnPublicPath =
     isLoggedIn && AUTH.includes(location.pathname as Path);

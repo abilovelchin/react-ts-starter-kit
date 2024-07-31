@@ -12,6 +12,7 @@ import { ErrorMiddleware } from '@/store/middlewares/error.middleware';
 import appSlice from '@/store/features/app.slice';
 import authSlice from '@/store/features/auth.slice';
 import { userApi } from '@/services/user.service';
+import { authApi } from '@/services/auth.service';
 
 const encryptor = encryptTransform({
   secretKey: import.meta.env.VITE_PERSIST_KEY,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   app: appSlice,
   auth: authSlice,
   [userApi.reducerPath]: userApi.reducer,
+  [authApi.reducerPath]: authApi.reducer,
 });
 
 const reducer = persistReducer(persistConfig, rootReducer);
@@ -39,7 +41,7 @@ const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: false,
     })
-      .concat(userApi.middleware)
+      .concat(authApi.middleware, userApi.middleware)
       .prepend(ErrorMiddleware),
 });
 

@@ -1,9 +1,14 @@
 export interface User {
   id: number;
-  name: string;
   username: string;
+  name: string;
+  surname: string;
   email: string;
-  website: string;
-  role: string;
-  token: string;
+  contactNumber: string;
+  role: {
+    id: number;
+    name: string;
+    key: string;
+  };
+  image: string;
 }

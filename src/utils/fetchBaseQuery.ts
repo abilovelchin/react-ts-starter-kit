@@ -8,8 +8,8 @@ export const baseQuery = fetchBaseQuery({
     const auth = state.auth;
 
     // If we have a token set in state, let's assume that we should be passing it.
-    if (auth?.user) {
-      headers.set('authorization', `Bearer ${auth.user.token}`);
+    if (auth?.data?.user) {
+      headers.set('authorization', `Bearer ${auth.data.accessToken}`);
     }
 
     return headers;

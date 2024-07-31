@@ -1,7 +1,6 @@
 import type { AppDispatch } from '@/store/index';
-import type { User } from '@/types/user.type';
 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
@@ -9,6 +8,8 @@ import { useToast } from '@/hooks/useToast';
 import { Button, Input } from '@/components';
 
 import { login } from '@/store/features/auth.slice';
+import { AsanIcon } from '@/assets/icons';
+import { Auth } from '@/types/auth.type';
 
 const LoginPage: React.FC = () => {
   const { toast } = useToast();
@@ -28,17 +29,28 @@ const LoginPage: React.FC = () => {
       toast({ title: 'Error', description: 'Username or Password is incorrect' });
       return;
     }
-    const user: Partial<User> = {
-      id: 1,
-      name: 'Elchin',
-      username: values.username,
-      email: 'abilovelchin@gmail.com',
-      website: 'https://abilov.az',
-      role: values.username.toUpperCase(),
-      token: 'Lorem ipsum, dolor sit',
+    const auth: Auth = {
+      user: {
+        id: 1,
+        name: 'Elchin',
+        surname: 'Abilov',
+        username: values.username,
+        contactNumber: '0505005050',
+        email: 'abilovelchin@gmail.com',
+        role: {
+          id: 1,
+          key: 'admin',
+          name: 'Admin',
+        },
+        image: 'base64loremipsum',
+      },
+      accessToken: 'Lorem ipsum, dolor sit',
+      accessTokenExpireDate: new Date(),
+      refreshToken: 'Lorem ipsum, dolor sit',
+      refreshTokenExpireDate: new Date(),
     };
 
-    dispatch(login(user));
+    dispatch(login(auth));
     navigate('/');
   });
 
@@ -75,6 +87,19 @@ const LoginPage: React.FC = () => {
               Sign In
             </Button>
           </div>
+
+          {import.meta.env.VITE_ASAN_LOGIN_URL ? (
+            <div className="flex flex-col gap-1">
+              <Button asChild type="button" size="lg" variant="outline">
+                <Link
+                  target="_blank"
+                  to={`${import.meta.env.VITE_ASAN_LOGIN_URL}${crypto.randomUUID()}`}
+                >
+                  <AsanIcon />
+                </Link>
+              </Button>
+            </div>
+          ) : null}
         </form>
       </div>
     </div>
