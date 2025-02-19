@@ -87,19 +87,6 @@ const LoginPage: React.FC = () => {
               Sign In
             </Button>
           </div>
-
-          {import.meta.env.VITE_ASAN_LOGIN_URL ? (
-            <div className="flex flex-col gap-1">
-              <Button asChild type="button" size="lg" variant="outline">
-                <Link
-                  target="_blank"
-                  to={`${import.meta.env.VITE_ASAN_LOGIN_URL}${crypto.randomUUID()}`}
-                >
-                  <AsanIcon />
-                </Link>
-              </Button>
-            </div>
-          ) : null}
         </form>
       </div>
     </div>
