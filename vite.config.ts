@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import generouted from '@generouted/react-router/plugin';
 import autoImportComponents from './src/utils/vite-plugin-auto-import-components';
 
-// @ts-ignore
+// @ts-expect-error: TailwindCSS Vite plugin import error workaround
 import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev/config/
