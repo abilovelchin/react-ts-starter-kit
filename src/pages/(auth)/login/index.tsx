@@ -1,14 +1,13 @@
 import type { AppDispatch } from '@/store/index';
 
-import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { useToast } from '@/hooks/useToast';
 import { Button, Input } from '@/components';
+import { useToast } from '@/hooks/useToast';
 
 import { login } from '@/store/features/auth.slice';
-import { AsanIcon } from '@/assets/icons';
 import { Auth } from '@/types/auth.type';
 
 const LoginPage: React.FC = () => {
